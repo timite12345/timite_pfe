@@ -44,7 +44,6 @@ public function NewMission(){
         //dd($dat
          User::create($data);
         session()->flash('Succes','Un nouvel utilisateur ajouté');
-
         return redirect('/welcome');
   }
 

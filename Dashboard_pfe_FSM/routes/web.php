@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,13 +16,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('Login_V');
+// Route::get('/', function () {
+//     return view('Login_V');
 
+// });
+
+Route::get('/AjouterMission',function(){
+return view('AjouterMission');
 });
 
 Route::get('/welcome', function () {
     return view('welcome');
 });
+Route::get('/Register_V',function(){
+  return view('/Register_V');
+});
 
 Route::post('/Login_V',[Controller::class, "Login"])->name('connectUser');
+Route::post('/RegisterPage',[Controller::class, "Create"])->name('createUser');
+Route::get('/NewMission',[Controller::class, "NewMission"])->name('NewMission');
+Route::post('/NewMission',[Controller::class, "CreateNewMission"])->name('mission');
+Route::post('/FormEmploy',[Controller::class, "CreateHopital"])->name('createEtbSante');
+
