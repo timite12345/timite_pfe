@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 });
 
-Route::get('/NewMission',[Controller::class, "NewMission"])->name('NewMission');
+Route::get('/AjouterMission',[Controller::class, "NewMission"])->name('NewMission');
 
 
 Route::get('/welcome', function () {
@@ -33,9 +33,7 @@ Route::get('/Register_V',function(){
 
 Route::post('/Login_V',[Controller::class, "Login"])->name('connectUser');
 Route::post('/RegisterPage',[Controller::class, "Create"])->name('createUser');
-Route::get('/NewMission',[Controller::class, "CreateNewMission"])->name('mission');
+Route::post('/NewMission',[Controller::class, "CreateNewMission"])->name('mission');
 Route::post('/FormEmploy',[Controller::class, "CreateHopital"])->name('createEtbSante');
 
-Route::get('/AjouterMission',function(){
-    return view('AjouterMission');
-    });
+

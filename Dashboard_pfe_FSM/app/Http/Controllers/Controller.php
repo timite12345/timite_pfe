@@ -30,7 +30,7 @@ class Controller extends BaseController
 public function NewMission(){
     $users= User::all();
     $etbsantes= Etbsante::all();
-    return view('/NewMission', compact('users','etbsantes'));
+    return view('AjouterMission', compact('users','etbsantes'));
 }
 
   public function Create(Request $request){

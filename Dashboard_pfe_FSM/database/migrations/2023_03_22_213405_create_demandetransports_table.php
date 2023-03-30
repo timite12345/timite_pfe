@@ -11,11 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('demandetransports', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-        });
-    }
+            $table->string("condTransp");
+            $table->string("nom");
+            $table->string("prenom");
+            $table->string("email");
+            $table->date("date_Dep");
+            $table->string("adresse_Dep");
+            $table->string("adresse_Arriv");
+            $table->string("estUrgent")->default(false);
+            $table->string("estFacture")->default(true);
+            $table->string("idChauffeur");
+
+    });
+}
 
     /**
      * Reverse the migrations.
